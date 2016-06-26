@@ -8,6 +8,6 @@ centos7:
 ubuntu1604:
   dockerfile: Dockerfile.ubuntu1604
   build: .
-  command: sh -c 'mkdir -p /tmp/debs && cp -a /usr/local/src/nginx_*/nginx-*.deb /tmp/debs'
+  command: sh -c 'mkdir -p /tmp/debs && cp -a /usr/local/src/nginx*.deb /tmp/debs'
   volumes:
     - .:/tmp:rw

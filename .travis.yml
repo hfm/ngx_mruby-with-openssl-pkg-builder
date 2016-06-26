@@ -4,3 +4,4 @@ script: docker-compose build $OS_RELEASE
 env:
   matrix:
     - OS_RELEASE=centos7
+    - OS_RELEASE=ubuntu1604
