@@ -25,10 +25,10 @@ RUN mkdir /usr/local/src/ngx_mruby && \
 
 # build ngx_mruby with static-linked openssl
 WORKDIR /usr/local/src/ngx_mruby
-RUN ./configure --with-ngx-src-root=/root/rpmbuild/BUILD/nginx-$NGINX_VERSION --with-openssl-src=/usr/local/src/openssl
+RUN ./configure -q --with-ngx-src-root=/root/rpmbuild/BUILD/nginx-$NGINX_VERSION --with-openssl-src=/usr/local/src/openssl
 ADD build_config.rb /usr/local/src/ngx_mruby/build_config.rb
-RUN make build_mruby
-RUN make generate_gems_config
+RUN make -s build_mruby
+RUN make -s generate_gems_config
 
 # rpmbuild
 WORKDIR /root/rpmbuild/SPECS
