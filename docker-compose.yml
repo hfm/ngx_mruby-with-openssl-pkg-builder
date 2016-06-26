@@ -1,13 +1,13 @@
 centos7:
   dockerfile: Dockerfile.centos7
   build: .
-  command: sh -c 'mkdir -p /tmp/rpms && cp -a /root/rpmbuild/RPMS/x86_64/nginx-*.rpm /tmp/rpms'
+  command: sh -c 'mkdir -p /tmp/pkgs && cp -a /root/rpmbuild/RPMS/x86_64/nginx-*.rpm /tmp/pkgs'
   volumes:
     - .:/tmp:rw
 
 ubuntu1604:
   dockerfile: Dockerfile.ubuntu1604
   build: .
-  command: sh -c 'mkdir -p /tmp/debs && cp -a /usr/local/src/nginx*.deb /tmp/debs'
+  command: sh -c 'mkdir -p /tmp/pkgs && cp -a /usr/local/src/nginx*.deb /tmp/pkgs'
   volumes:
     - .:/tmp:rw
