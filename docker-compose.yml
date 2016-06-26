@@ -5,6 +5,13 @@ centos7:
   volumes:
     - .:/tmp:rw
 
+ubuntu1404:
+  dockerfile: Dockerfile.ubuntu1404
+  build: .
+  command: sh -c 'mkdir -p /tmp/pkgs && cp -a /usr/local/src/nginx*.deb /tmp/pkgs'
+  volumes:
+    - .:/tmp:rw
+
 ubuntu1604:
   dockerfile: Dockerfile.ubuntu1604
   build: .
