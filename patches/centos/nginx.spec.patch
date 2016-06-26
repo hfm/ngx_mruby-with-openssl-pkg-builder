@@ -1,0 +1,37 @@
+--- nginx.spec.orig
++++ nginx.spec
+@@ -12,7 +12,6 @@
+ Requires(pre): shadow-utils
+ Requires: initscripts >= 8.36
+ Requires(post): chkconfig
+-Requires: openssl
+ BuildRequires: openssl-devel
+ BuildRequires: perl
+ BuildRequires: GeoIP-devel
+@@ -24,7 +23,6 @@
+ Requires(pre): shadow-utils
+ Requires: initscripts >= 8.36
+ Requires(post): chkconfig
+-Requires: openssl >= 1.0.1
+ BuildRequires: openssl-devel >= 1.0.1
+ BuildRequires: perl-devel
+ BuildRequires: perl-ExtUtils-Embed
+@@ -38,7 +36,6 @@
+ Epoch: %{epoch}
+ Requires(pre): shadow-utils
+ Requires: systemd
+-Requires: openssl >= 1.0.1
+ BuildRequires: systemd
+ BuildRequires: openssl-devel >= 1.0.1
+ BuildRequires: perl-devel
+@@ -120,6 +117,10 @@
+         --with-mail_ssl_module \
+         --with-file-aio \
+         --with-ipv6 \
++        --without-stream_access_module \
++        --with-openssl=/usr/local/src/openssl \
++        --add-module=/usr/local/src/ngx_mruby \
++        --add-module=/usr/local/src/ngx_mruby/dependence/ngx_devel_kit \
+         %{?with_http2:--with-http_v2_module}")
+
+ Summary: High performance web server

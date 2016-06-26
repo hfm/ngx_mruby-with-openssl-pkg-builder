@@ -1,0 +1,13 @@
+centos7:
+  dockerfile: Dockerfile.centos7
+  build: .
+  command: sh -c 'mkdir -p /tmp/rpms && cp -a /root/rpmbuild/RPMS/x86_64/nginx-*.rpm /tmp/rpms'
+  volumes:
+    - .:/tmp:rw
+
+ubuntu1604:
+  dockerfile: Dockerfile.ubuntu1604
+  build: .
+  command: sh -c 'mkdir -p /tmp/debs && cp -a /usr/local/src/nginx_*/nginx-*.deb /tmp/debs'
+  volumes:
+    - .:/tmp:rw
