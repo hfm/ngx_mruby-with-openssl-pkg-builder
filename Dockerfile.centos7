@@ -6,7 +6,7 @@ RUN yum -y -q install bison gcc git make rake rpmdevtools wget which
 RUN rpmdev-setuptree
 
 # Get nginx
-ENV NGINX_VERSION 1.11.4
+ENV NGINX_VERSION 1.11.5
 RUN wget -q http://nginx.org/packages/mainline/centos/7/SRPMS/nginx-$NGINX_VERSION-1.el7.ngx.src.rpm -P /tmp
 RUN rpm -U /tmp/nginx-$NGINX_VERSION-1.el7.ngx.src.rpm
 RUN yum-builddep -y -q /tmp/nginx-$NGINX_VERSION-1.el7.ngx.src.rpm
