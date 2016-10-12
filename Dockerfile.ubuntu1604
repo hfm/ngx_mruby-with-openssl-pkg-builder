@@ -21,7 +21,7 @@ RUN mkdir /usr/local/src/openssl && \
     tar -xz -C /usr/local/src/openssl --strip=1
 
 # Get ngx_mruby
-ENV NGX_MRUBY_VERSION 1.18.5
+ENV NGX_MRUBY_VERSION 1.18.7
 RUN mkdir /usr/local/src/ngx_mruby && \
     wget -qO- https://github.com/matsumoto-r/ngx_mruby/archive/v$NGX_MRUBY_VERSION.tar.gz | \
     tar -xz -C /usr/local/src/ngx_mruby --strip=1
